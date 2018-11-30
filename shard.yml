@@ -1,0 +1,9 @@
+name: usb
+version: 0.1.0
+
+authors:
+  - Alexander Batalov <alex.batalov@gmail.com>
+
+crystal: 0.27.0
+
+license: MIT
