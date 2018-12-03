@@ -11,6 +11,23 @@ class USB::Context
   def initialize(@unwrap : LibUSB::ContextRef)
   end
 
+  def devices
+    devs = [] of Device
+
+    count = LibUSB.get_device_list(self, out refs)
+    raise "libusb_get_device_list" if count < 0
+
+    begin
+      count.times do |n|
+        devs << Device.new(refs[n], self)
+      end
+    ensure
+      LibUSB.free_device_list(refs, 1)
+    end
+
+    devs
+  end
+
   def close
     return if closed?
 
