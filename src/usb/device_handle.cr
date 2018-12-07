@@ -32,6 +32,11 @@ class USB::DeviceHandle
     raise "libusb_release_interface" if r < 0
   end
 
+  def set_configuration(configuration_value : UInt8)
+    r = LibUSB.set_configuration(self, configuration_value)
+    raise "libusb_set_configuration" if r < 0
+  end
+
   def bulk_transfer(endpoint_address : UInt8, slice : Bytes, timeout : UInt32)
     r = LibUSB.bulk_transfer(self, endpoint_address, slice, slice.size, out transferred, timeout)
     raise "libusb_bulk_transfer" if r < 0
