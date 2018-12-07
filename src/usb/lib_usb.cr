@@ -189,7 +189,7 @@ lib LibUSB
   end
 
   # libusb_bos_type
-  enum DeviceCapabilityType
+  enum DeviceCapabilityType : UInt8
     WIRELESS_USB      = 1
     USB_2_0_EXTENSION = 2
     SUPERSPEED_USB    = 3
@@ -205,7 +205,7 @@ lib LibUSB
   end
 
   # libusb_class_code
-  enum Class
+  enum Class : UInt8
     PER_INTERFACE       =    0
     AUDIO               =    1
     COMM                =    2
@@ -228,7 +228,7 @@ lib LibUSB
   end
 
   # libusb_descriptor_type
-  enum DescriptorType
+  enum DescriptorType : UInt8
     DEVICE                        = 0x01
     CONFIG                        = 0x02
     STRING                        = 0x03
@@ -245,7 +245,7 @@ lib LibUSB
   end
 
   # libusb_endpoint_direction
-  enum EndpointDirection
+  enum EndpointDirection : UInt8
     IN  = 0x80
     OUT = 0x00
   end
@@ -269,7 +269,7 @@ lib LibUSB
   end
 
   # libusb_iso_sync_type
-  enum IsoSyncType
+  enum IsoSyncType : UInt8
     NONE     = 0
     ASYNC    = 1
     ADAPTIVE = 2
@@ -277,7 +277,7 @@ lib LibUSB
   end
 
   # libusb_iso_usage_type
-  enum IsoUsageType
+  enum IsoUsageType : UInt8
     DATA     = 0
     FEEDBACK = 1
     IMPLICIT = 2
@@ -299,7 +299,7 @@ lib LibUSB
   end
 
   # libusb_request_recipient
-  enum RequestRecipient
+  enum RequestRecipient : UInt8
     DEVICE    = 0x00
     INTERFACE = 0x01
     ENDPOINT  = 0x02
@@ -307,7 +307,7 @@ lib LibUSB
   end
 
   # libusb_request_type
-  enum RequestType
+  enum RequestType : UInt8
     STANDARD = 0x00 << 5
     CLASS    = 0x01 << 5
     VENDOR   = 0x02 << 5
@@ -326,12 +326,12 @@ lib LibUSB
 
   # libusb_ss_usb_device_capability_attributes
   @[Flags]
-  enum SuperSpeedUSBAttributes
+  enum SuperSpeedUSBAttributes : UInt8
     LTM_SUPPORT = 2
   end
 
   # libusb_standard_request
-  enum StandardRequest
+  enum StandardRequest : UInt8
     GET_STATUS        = 0x00
     CLEAR_FEATURE     = 0x01
     SET_FEATURE       = 0x03
@@ -349,7 +349,7 @@ lib LibUSB
 
   # libusb_supported_speed
   @[Flags]
-  enum SupportedSpeed
+  enum SupportedSpeed : UInt16
     LOW   = 1
     FULL  = 2
     HIGH  = 4
@@ -358,7 +358,7 @@ lib LibUSB
 
   # libusb_transfer_flags
   @[Flags]
-  enum TransferFlags
+  enum TransferFlags : UInt8
     SHORT_NOT_OK    = 1 << 0
     FREE_BUFFER     = 1 << 1
     FREE_TRANSFER   = 1 << 2
@@ -377,7 +377,7 @@ lib LibUSB
   end
 
   # libusb_transfer_type
-  enum TransferType
+  enum TransferType : UInt8
     CONTROL     = 0
     ISOCHRONOUS = 1
     BULK        = 2
@@ -387,7 +387,7 @@ lib LibUSB
 
   # libusb_usb_2_0_extension_attributes
   @[Flags]
-  enum USB20ExtensionAttributes
+  enum USB20ExtensionAttributes : UInt32
     LPM_SUPPORT = 2
   end
 
