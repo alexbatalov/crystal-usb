@@ -8,7 +8,7 @@ struct USB::Configuration
   getter interfaces : Array(Interface)
   getter extra : Bytes?
 
-  def initialize(@configuration_value : UInt8, @attributes : UInt8, @max_power : UInt8, @interfaces : Array(Interface), @extra : Bytes?)
+  def initialize(@configuration_value : UInt8, @attributes : UInt8, @max_power : UInt8, @interfaces : Array(Interface), @extra : Bytes? = nil)
   end
 
   def self_powered?
