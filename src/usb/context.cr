@@ -30,6 +30,7 @@ class USB::Context
 
   def close
     return if closed?
+    @closed = true
 
     LibUSB.exit(self)
   end

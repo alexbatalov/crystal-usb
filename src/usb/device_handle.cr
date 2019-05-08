@@ -65,6 +65,7 @@ class USB::DeviceHandle
 
   def close
     return if closed?
+    @closed = true
 
     LibUSB.close(self)
   end
