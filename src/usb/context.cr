@@ -19,7 +19,7 @@ class USB::Context
 
     begin
       count.times do |n|
-        devs << Device.new(refs[n], self)
+        devs << Device.find_or_initialize(refs[n], self)
       end
     ensure
       LibUSB.free_device_list(refs, 1)
