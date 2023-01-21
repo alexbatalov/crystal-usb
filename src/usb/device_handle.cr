@@ -50,7 +50,7 @@ class USB::DeviceHandle
   end
 
   def control_transfer(request_type : UInt8, request : UInt8, value : UInt16, index : UInt16, slice : Bytes, timeout : UInt32)
-    r = LibUSB.control_transfer(self, request_type, request, value, index, slice, slice.length, timeout)
+    r = LibUSB.control_transfer(self, request_type, request, value, index, slice, slice.size, timeout)
     raise "libusb_control_transfer" if r < 0
 
     r
